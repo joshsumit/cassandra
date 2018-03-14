@@ -18,6 +18,7 @@ docker run --name n2 -d cassandraimage -seeds 127.0.0.7
 # Snitch
 A snitch determines which datacenters and racks nodes belong to. They inform Cassandra about the network topology so that requests are routed efficiently and allows Cassandra to distribute replicas by grouping machines into datacenters and racks. 
 
+USed to effficiently route requests.
 The replication strategy places the replicas based on the information provided by the new snitch. 
 All nodes must return to the same rack and datacenter. Cassandra does its best not to have more than one replica on the same rack (which is not necessarily a physical location).
 
@@ -37,5 +38,7 @@ GoogleCloudSnitch
   Use the GoogleCloudSnitch for Cassandra deployments on Google Cloud Platform across one or more regions.
 CloudstackSnitch
   Use the CloudstackSnitch for Apache Cloudstack environments.
+  
+docker run --name n2 -d cassandraimage -dc dc1 -rack rak1
   
   
